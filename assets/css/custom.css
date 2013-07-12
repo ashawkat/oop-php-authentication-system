@@ -1,0 +1,16 @@
+/* Customize the navbar links to be fill the entire space of the .navbar */
+body {background: url("../img/bg-img.jpg") repeat;}
+.navbar .navbar-inner {padding: 0;}
+.navbar .nav {margin: 0; display: table; width: 100%;}
+.navbar .nav li a {font-size: 12pt; font-weight: bold; text-align: center; border-left: 1px solid rgba(255,255,255,.75); border-right: 1px solid rgba(0,0,0,.1);}
+.navbar .nav li:first-child a {border-left: 0; border-radius: 3px 0 0 3px;}
+.navbar .nav li:last-child a {border-right: 0; border-radius: 0 3px 3px 0; }
+.menu {margin-top:20px;}
+.footer {background-color: #444845; margin: 6px 0 0 1px; height: 60px; font-size: 20px; font-family: granada; color: white; padding: 25px;}
+.contact-heading {margin-left: 20px;}
+.set-icon-name {margin: -27px 0px 0 20px!important;}
+.set-icon-mobile {margin: -31px 0px 0 20px!important;}
+.gaming_pic {width: 250px; height: 250px;}
+.man-block {font-size: 12px; margin-bottom: 0px;}
+.row-bg {background: url("../img/row-bg.jpg") repeat; width: 100%; height: 200px; margin-left: 0px;}
+.font {color: white;}
