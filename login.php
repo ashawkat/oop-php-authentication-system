@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once 'include/class.user2.php';
+include_once 'include/class.user.php';
 $user = new User();
 
 if (isset($_POST['submit'])) { 
