@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang = "en">
+<head>
 <meta charset = "utf-8">
 <title>OOP Login Module</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" />

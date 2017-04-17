@@ -1,5 +1,5 @@
-<?php
-    session_start();
+<?php 
+session_start();
     include_once 'include/class.user.php';
     $user = new User();
 
@@ -14,10 +14,10 @@
         header("location:login.php");
     }
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+        <meta charset = "utf-8">
         <title>Home</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     </head>
