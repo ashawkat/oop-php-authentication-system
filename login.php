@@ -1,10 +1,10 @@
-<?php
-	session_start();
-	include_once 'include/class.user.php';
-	$user = new User();
+<?php 
+session_start();
+include_once 'include/class.user2.php';
+$user = new User();
 
-	if (isset($_REQUEST['submit'])) { 
-		extract($_REQUEST);   
+if (isset($_POST['submit'])) { 
+		extract($_POST);   
 	    $login = $user->check_login($emailusername, $password);
 	    if ($login) {
 	        // Registration Success
@@ -15,31 +15,14 @@
 	    }
 	}
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>OOP Login Module</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<script language="javascript" type="text/javascript"> 
-            
-            function submitlogin() {
-                var form = document.login;
-				if(form.emailusername.value == ""){
-					alert( "Enter email or username." );
-					return false;
-				}
-				else if(form.password.value == ""){
-					alert( "Enter password." );
-					return false;
-				}	 
-			}
-		</script>
-	</head>
-
-	<body>
-		<div id="container" class="container">
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset = "utf-8">
+<title>OOP Login Module</title>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+</head>
+<body>
+<div id="container" class="container">
 			<h1>Login Here</h1>
 			<form action="" method="post" name="login">
 				<table class="table " width="400">
@@ -63,5 +46,19 @@
 				</table>
 			</form>
 		</div>
+		<script>
+		function submitlogin() {
+                var form = document.login;
+				if(form.emailusername.value == ""){
+					alert( "Enter email or username." );
+					return false;
+				}
+				else if(form.password.value == ""){
+					alert( "Enter password." );
+					return false;
+				}	 
+			}
+		</script>
+		
+		
 	</body>
-</html>

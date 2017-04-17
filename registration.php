@@ -1,5 +1,5 @@
 <?php 
-include_once 'include/class.user2.php';
+include_once 'include/class.user.php';
 $user = new User();
 // Checking for user logged in or not
     /*if (!$user->get_session())
