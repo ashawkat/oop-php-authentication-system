@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 28, 2012 at 08:50 AM
--- Server version: 5.5.24-log
--- PHP Version: 5.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Apr 17, 2017 at 12:55 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -25,18 +25,36 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `users`
 --
+-- Creation: Apr 16, 2017 at 11:53 PM
+--
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
+`uid` int(11) NOT NULL,
   `uname` varchar(30) DEFAULT NULL,
   `upass` varchar(50) DEFAULT NULL,
   `fullname` varchar(100) DEFAULT NULL,
-  `uemail` varchar(70) DEFAULT NULL,
-  PRIMARY KEY (`uid`),
-  UNIQUE KEY `uname` (`uname`),
-  UNIQUE KEY `uemail` (`uemail`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `uemail` varchar(70) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`uid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
