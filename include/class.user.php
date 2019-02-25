@@ -12,7 +12,7 @@
 		public function reg_user($name,$username,$password,$email){
 			//echo "k";
 			
-			$password = md5($password);
+			$password = password_hash($password, PASSWORD_DEFAULT);
 
 			//checking if the username or email is available in db
 			$query = "SELECT * FROM users WHERE uname='$username' OR uemail='$email'";
@@ -38,9 +38,9 @@
 			
 	/*** for login process ***/
 		public function check_login($emailusername, $password){
-        $password = md5($password);
+        $password = password_hash($password, PASSWORD_DEFAULT);
 		
-		$query = "SELECT uid from users WHERE uemail='$emailusername' or uname='$emailusername' and upass='$password'";
+		$query = "SELECT uid from users WHERE uemail='$emailusername' and upass='$password' or uname='$emailusername' and upass='$password'";
 		
 		$result = $this->db->query($query) or die($this->db->error);
 
