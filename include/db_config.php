@@ -1,19 +1,23 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'root');
 define('DB_DATABASE', 'oop_log_mod');
 
-class DB_con {
+class DB_con
+{
 	public $connection;
-	function __construct(){
-		$this->connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD,DB_DATABASE);
-		
-		if ($this->connection->connect_error) die('Database error -> ' . $this->connection->connect_error);
-		
+	function __construct()
+	{
+		$this->connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, 8889, '/Applications/MAMP/tmp/mysql/mysql.sock');
+
+		if ($this->connection->connect_error)
+			die('Database error -> ' . $this->connection->connect_error);
+
 	}
-	
-	function ret_obj(){
+
+	function ret_obj()
+	{
 		return $this->connection;
 	}
 

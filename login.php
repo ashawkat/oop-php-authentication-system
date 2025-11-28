@@ -1,72 +1,42 @@
-<?php 
+<?php
 session_start();
 include_once 'include/class.user.php';
 $user = new User();
 
-if (isset($_POST['submit'])) { 
-		extract($_POST);   
-	    $login = $user->check_login($emailusername, $password);
-	    if ($login) {
-	        // Registration Success
-	       header("location:home.php");
-	    } else {
-	        // Registration Failed
-	        echo 'Wrong username or password';
-	    }
-	}
+if (isset($_POST['submit'])) {
+  extract($_POST);
+  $login = $user->check_login($emailusername, $password);
+  if ($login) {
+    // Registration Success
+    header("location:home.php");
+  } else {
+    // Registration Failed
+    echo 'Wrong username or password';
+  }
+}
 ?>
-  <!DOCTYPE html>
-  <html lang="en">
+<?php include 'include/header.php'; ?>
 
-  <head>
-    <meta charset="utf-8">
-    <title>OOP Login Module</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  </head>
+<div class="card p-4" style="width: 100%; max-width: 400px;">
+  <div class="card-body">
+    <h2 class="text-center mb-4 font-weight-bold">Login</h2>
+    <form action="" method="post" name="login" id="loginForm">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="emailusername" name="emailusername" placeholder="Username or Email">
+        <label for="emailusername">Username or Email</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+      <div class="d-grid gap-2 mb-3">
+        <button class="btn btn-primary btn-lg" type="submit" name="submit">Sign In</button>
+      </div>
+      <div class="text-center">
+        <p class="mb-0">Don't have an account? <a href="registration.php">Register here</a></p>
+      </div>
+    </form>
+  </div>
+</div>
 
-  <body>
-    <div id="container" class="container">
-      <h1>Login Here</h1>
-      <form action="" method="post" name="login">
-        <table class="table " width="400">
-          <tr>
-            <th>UserName or Email:</th>
-            <td>
-              <input type="text" name="emailusername" required>
-            </td>
-          </tr>
-          <tr>
-            <th>Password:</th>
-            <td>
-              <input type="password" name="password" required>
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>
-              <input class="btn" type="submit" name="submit" value="Login" onclick="return(submitlogin());">
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td><a href="registration.php">Register new user</a></td>
-          </tr>
-
-        </table>
-      </form>
-    </div>
-    <script>
-      function submitlogin() {
-        var form = document.login;
-        if (form.emailusername.value == "") {
-          alert("Enter email or username.");
-          return false;
-        } else if (form.password.value == "") {
-          alert("Enter password.");
-          return false;
-        }
-      }
-    </script>
-
-
-  </body>
+<?php include 'include/footer.php'; ?>
